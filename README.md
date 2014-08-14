@@ -13,7 +13,7 @@ Markdown Extra Plugin for esoTalk
 4. Go to 'administration' on the site, then to 'Plugins' and enable 'Markdown Extra' plugin.
 5. Then it should be working. Just create a post using Markdown syntax and test it.
 
-### 2. Second method, cloning this repository to your plugins/ folder via command line
+### 2. Second method, cloning this repository to your plugins/ directory via command line
 
 Via command line, commands are:
 

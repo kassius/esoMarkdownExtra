@@ -4,7 +4,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["MarkdownExtra"] = array(
     "name"        => "Markdown Extra",
-    "description" => "This plugin uses the Markdown Extra Library from Michel Fortin to render the posts.",
+    "description" => "This plugi uses the Markdown Extra Library from Michel Fortin to render text.",
     "version"     => "1.0",
     "author"      => "Kassius Iakxos",
     "authorEmail" => "kassius@users.noreply.github.com",
@@ -23,8 +23,10 @@ class ETPlugin_MarkdownExtra extends ETPlugin
 {
 	public $md;
 
-	public function handler_format_format($sender)
+	public function handler_format_beforeFormat($sender)
 	{
+		$search = array("\r&gt; ","\n&gt; ");
+		$sender->content = str_replace($search, "\n> ", $sender->content);;
 		$sender->content = MarkdownExtra::defaultTransform($sender->content);
 	}
 
@@ -32,6 +34,7 @@ class ETPlugin_MarkdownExtra extends ETPlugin
 	{
 		$sender->addCSSFile($this->resource("markdown.css"));
 	}
+
 	public function handler_memberController_renderBefore($sender)
 	{
 		$sender->addCSSFile($this->resource("markdown.css"));

@@ -22,10 +22,10 @@ Via command line, commands are:
 ~~~bash
 cd esoTalk/addons/plugins # go to plugins directory inside your esoTalk installation
 git clone https://github.com/kassius/esoMarkdownExtra # clone the repository
-rm -r MarkdownExtra/.git # delete git files for safety, unless you want to update it later via command line, then restrict access to this directory in your server's configuration
+rm -r esoMarkdownExtra/.git # delete git files for safety, unless you want to update it later via command line, then restrict access to this directory in your server's configuration
 ~~~
 
-Then it should be working. Just create a post using Markdown syntax and test it.
+Then go to forum administration, and enable the plugin.
 
 ## Requirements
 

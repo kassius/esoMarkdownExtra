@@ -1,7 +1,7 @@
 esoMarkdownExtra
 =====================
 
-Markdown Extra Plugin for esoTalk
+Markdown Extra plugin for esoTalk
 
 Still have some little bugs.
 

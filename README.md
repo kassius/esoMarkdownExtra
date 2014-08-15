@@ -37,7 +37,7 @@ For now it requires that you have a version of PHP with the class autoloader ena
 - [ ] css for member controller, for showing members posts, should have diminuted headers.
 - [x] ~~correct automatic links,ex.: &lt;http://esotalk.org&gt;~~ **use just url autolinks instead**,  
 - [x] correct footnotes from being breaked
-- [ ] choose a name for the plugin uri, ex.: esoMDExtra
+- [x] choose a name for the plugin uri, ~~ex.: esoMDExtra~ **esoMarkdownExtra**
 - [ ] correct bug with md text link, href "" being escaped
 - [ ] make a trigger for post formatting
 - [ ] release with a version

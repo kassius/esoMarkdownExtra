@@ -2,8 +2,8 @@
 
 if (!defined("IN_ESOTALK")) exit;
 
-ET::$pluginInfo["MarkdownExtra"] = array(
-    "name"        => "Markdown Extra",
+ET::$pluginInfo["esoMarkdownExtra"] = array(
+    "name"        => "esoMarkdownExtra",
     "description" => "This plugin uses the Markdown Extra Library from Michel Fortin to render text.",
     "version"     => "1.0",
     "author"      => "Kassius Iakxos",
@@ -32,7 +32,7 @@ class MDETFormat extends ETFormat
 	}
 }
 
-class ETPlugin_MarkdownExtra extends ETPlugin
+class ETPlugin_esoMarkdownExtra extends ETPlugin
 {
 	public $content;
 	public $MDETFormat;

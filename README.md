@@ -42,6 +42,10 @@ For now it requires that you have a version of PHP with the class autoloader ena
 - [ ] make a trigger for post formatting
 - [ ] release with a version
 
+plus:
+
+- [ ] prefix footnotes with id, so that 1-1 differs from 2-1 (property `fn_id_prefix`)
+
 ## Reference
 
 * Markdown
@@ -50,5 +54,6 @@ For now it requires that you have a version of PHP with the class autoloader ena
 * Markdown Extra
   * https://michelf.ca/projects/php-markdown/extra/
   * https://github.com/michelf/php-markdown/
+  * https://michelf.ca/projects/php-markdown/configuration/
 * esoTalk Forum Software
   * https://esotalk.org/forum/

@@ -36,3 +36,14 @@ For now it requires that you have a version of PHP with the class autoloader ena
 - [x] ~~correct automatic links~~, **autolinks**, ex.: <http://esotalk.org>
 - [x] correct footnotes from being breaked
 - [ ] choose an name for the plugin uri, ex.: esoMDExtra
+
+## Reference
+
+* Markdown
+  * http://daringfireball.net/projects/markdown/
+  * http://en.wikipedia.org/wiki/Markdown
+* Markdown Extra
+  * https://michelf.ca/projects/php-markdown/extra/
+  * https://github.com/michelf/php-markdown/
+* esoTalk Forum Software
+  * https://esotalk.org/forum/

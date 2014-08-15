@@ -9,10 +9,10 @@ Still have some little bugs.
 
 ### 1. First method, getting the master .zip file
 
-1. Download the file https://github.com/kassius/esotalk-markdownextra/archive/master.zip
+1. Download the file https://github.com/kassius/esoMarkdownExtra/archive/master.zip
 2. Extract it to your [esoTalk instalation directory]/addons/plugins/
-3. Rename the newly created directory 'esotalk-markdownextra-master' to 'MarkdownExtra'
-4. Go to 'administration' on the site, then to 'Plugins' and enable 'Markdown Extra' plugin.
+  * Then you should have the directory [your root install]/addons/plugins/esoMarkdownExtra/
+4. Go to 'administration' on the site, then to 'Plugins' and enable 'esoMarkdownExtra' plugin.
 5. Then it should be working. Just create a post using Markdown syntax and test it.
 
 ### 2. Second method, cloning this repository to your plugins/ directory via command line
@@ -21,8 +21,7 @@ Via command line, commands are:
 
 ~~~bash
 cd esoTalk/addons/plugins # go to plugins directory inside your esoTalk installation
-git clone https://github.com/kassius/esotalk-markdownextra.git # clone the repository
-mv esotalk-markdownextra MarkdownExtra # rename the repository do 'MarkdownExtra'
+git clone https://github.com/kassius/esoMarkdownExtra # clone the repository
 rm -r MarkdownExtra/.git # delete git files for safety, unless you want to update it later via command line, then restrict access to this directory in your server's configuration
 ~~~
 
@@ -37,7 +36,7 @@ For now it requires that you have a version of PHP with the class autoloader ena
 - [ ] css for member controller, for showing members posts, should have diminuted headers.
 - [x] ~~correct automatic links,ex.: &lt;http://esotalk.org&gt;~~ **use just url autolinks instead**,  
 - [x] correct footnotes from being breaked
-- [x] choose a name for the plugin uri, ~~ex.: esoMDExtra~ **esoMarkdownExtra**
+- [x] choose a name for the plugin uri, ~~ex.: esoMDExtra~~ **esoMarkdownExtra**
 - [ ] correct bug with md text link, href "" being escaped
 - [ ] make a trigger for post formatting
 - [ ] release with a version
@@ -56,4 +55,5 @@ plus:
   * https://github.com/michelf/php-markdown/
   * https://michelf.ca/projects/php-markdown/configuration/
 * esoTalk Forum Software
-  * https://esotalk.org/forum/
+  * http://esotalk.org/forum/
+  * http://esotalk.org/

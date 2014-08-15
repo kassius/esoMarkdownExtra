@@ -33,4 +33,5 @@ For now it requires that you have a version of PHP with the class autoloader ena
 ## TODO
 
 - [ ] css for member controller, for showing members posts, should have diminuted headers.
-
+- [ ] correct automatic links, ex.: <http://esotalk.org>
+- [ ] correct footnotes from being breaked

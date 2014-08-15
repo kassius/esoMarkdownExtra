@@ -1,4 +1,4 @@
-esotalk-markdownextra
+esoMarkdownExtra
 =====================
 
 Markdown Extra Plugin for esoTalk

@@ -4,7 +4,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["MarkdownExtra"] = array(
     "name"        => "Markdown Extra",
-    "description" => "This plugi uses the Markdown Extra Library from Michel Fortin to render text.",
+    "description" => "This plugin uses the Markdown Extra Library from Michel Fortin to render text.",
     "version"     => "1.0",
     "author"      => "Kassius Iakxos",
     "authorEmail" => "kassius@users.noreply.github.com",

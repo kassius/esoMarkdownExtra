@@ -27,6 +27,8 @@ class MDETFormat extends ETFormat
 	{
 		if (C("esoTalk.format.mentions")) $this->mentions();
 		if (!$this->inline) $this->quotes();
+		$this->closeTags();
+		
 		return $this;
 	}
 
@@ -42,49 +44,20 @@ class MDETFormat extends ETFormat
 
 		return $this;
 	}
-
-	public function quotes()
-	{
-		// Starting from the innermost quote, work our way to the outermost, replacing them one-by-one using a
-		// callback function. This is the only simple way to do nested quotes without a lexer.
-		$regexp = "/(.*?)\n?\[quote(?:=(.*?)(]?))?\]\n?(.*?)\n?\[\/quote\]\n{0,2}/ise";
-		while (preg_match($regexp, $this->content)) {
-			$this->content = preg_replace($regexp, "'$1'.\$this->makeQuote('$4', '$2$3')", $this->content);
-		}
-
-		return $this;
-	}
 	
-	public function makeQuote($text, $citation = "")
-	{
-		// If there is a citation and it has a : in it, split it into a post ID and the rest.
-		if ($citation and strpos($citation, ":") !== false)
-			list($postId, $citation) = explode(":", $citation, 2);
-
-		// Construct the quote.
-		$quote = "<blockquote>\n";
-
-		// If we extracted a post ID from the citation, add a "find this post" link.
-		if (!empty($postId)) $quote .= "<a href='".URL(postURL($postId), true)."' rel='post' data-id='$postId' class='control-search postRef'><i class='icon-search'></i></a> ";
-
-		// If there is a citation, add it.
-		if (!empty($citation)) $quote .= "<cite>$citation</cite> ";
-
-		// Finish constructing and return the quote.
-		$quote .= "$text\n</blockquote>";
-		return $quote;
-	}
-
 }
 
 class ETPlugin_esoMarkdownExtra extends ETPlugin
 {
 	public $content;
 	public $MDETFormat;
+	public $MDEParser;
 
 	public function init()
 	{
 		$this->MDETFormat = new MDETFormat;
+		$this->MDEParser = new MarkdownExtra;
+		$this->MDEParser->fn_id_prefix = mt_rand(0,99999)."-";
 	}
 
 	public function handler_format_beforeFormat($sender)
@@ -95,10 +68,10 @@ class ETPlugin_esoMarkdownExtra extends ETPlugin
 	public function handler_format_afterFormat($sender)
 	{
 		$this->MDETFormat->links(); 
-
+		
 		$search = array("\r&gt; ","\n&gt; ");
 		$this->MDETFormat->content = str_replace($search, "\n> ", $this->MDETFormat->content);
-		$this->MDETFormat->content = MarkdownExtra::defaultTransform($this->MDETFormat->content);
+		$this->MDETFormat->content = $this->MDEParser->transform($this->MDETFormat->content);
 
 		$this->MDETFormat->content = str_replace("\r", "\n", $this->MDETFormat->content);
 		while(strstr($this->MDETFormat->content,"\n\n") !== FALSE) { $this->MDETFormat->content = str_replace("\n\n", "", $this->MDETFormat->content); }
@@ -106,7 +79,6 @@ class ETPlugin_esoMarkdownExtra extends ETPlugin
 		$this->MDETFormat->format();
 		$this->MDETFormat->content = str_replace("\\\"", "\"", $this->MDETFormat->content);
 
-		$this->MDETFormat->closeTags();
 		$sender->content = $this->MDETFormat->content;
 	}
 

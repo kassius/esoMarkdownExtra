@@ -2,8 +2,7 @@ esoMarkdownExtra
 =====================
 
 Markdown Extra plugin for esoTalk
-
-Still have some little bugs.
+It is working but was not tested with other plugins, feedback is welcome.
 
 ## Installation
 
@@ -30,20 +29,6 @@ Then go to forum administration, and enable the plugin.
 ## Requirements
 
 For now it requires that you have a version of PHP with the class autoloader enabled.
-
-## TODO
-
-- [ ] css for member controller, for showing members posts, should have diminuted headers.
-- [x] ~~correct automatic links,ex.: &lt;http://esotalk.org&gt;~~ **use just url autolinks instead**,  
-- [x] correct footnotes from being breaked
-- [x] choose a name for the plugin uri, ~~ex.: esoMDExtra~~ **esoMarkdownExtra**
-- [x] correct bug with md text link, href "" being escaped
-- [ ] make a trigger for post formatting
-- [ ] release with a version
-
-plus:
-
-- [ ] prefix footnotes with id, so that 1-1 differs from 2-1 (property `fn_id_prefix`)
 
 ## Reference
 

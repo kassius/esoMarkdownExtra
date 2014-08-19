@@ -37,7 +37,7 @@ For now it requires that you have a version of PHP with the class autoloader ena
 - [x] ~~correct automatic links,ex.: &lt;http://esotalk.org&gt;~~ **use just url autolinks instead**,  
 - [x] correct footnotes from being breaked
 - [x] choose a name for the plugin uri, ~~ex.: esoMDExtra~~ **esoMarkdownExtra**
-- [ ] correct bug with md text link, href "" being escaped
+- [x] correct bug with md text link, href "" being escaped
 - [ ] make a trigger for post formatting
 - [ ] release with a version
 

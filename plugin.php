@@ -78,7 +78,19 @@ class ETPlugin_esoMarkdownExtra extends ETPlugin
 
 		$this->MDETFormat->format();
 		$this->MDETFormat->content = str_replace("\\\"", "\"", $this->MDETFormat->content);
-
+		
+		
+		$this->MDETFormat->content = preg_replace_callback(
+		      '#\<code (.*?)\>(.+?)\<\/code\>#s',function($m)
+		      {
+		        //remove link-member link in code view
+		        $code = preg_replace("#\<a href='(.*?)' class='link-member'\>(.*?)</a\>#s","$2",$m[2]);
+		        //fixed html format
+		        $code = str_replace("&amp;","&",$code);
+		        return  "<code ".$m[1].">".$code."</code>";
+		    },$this->MDETFormat->content);
+    
+    
 		$sender->content = $this->MDETFormat->content;
 	}
 
